@@ -1,0 +1,8 @@
+%h1 Search for an ISBN here.
+
+= form_tag books_path, method: 'get' do
+  = label_tag 'ISBN'
+  = text_field_tag 'isbn', params[:isbn]
+  = submit_tag 'Search'
+
+= render 'results'

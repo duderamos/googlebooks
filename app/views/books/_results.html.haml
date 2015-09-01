@@ -1,0 +1,24 @@
+- if @books
+  - @books.each do |book|
+    .book_item
+      - if book.image_link
+        = image_tag book.image_link
+      - else
+        no image
+      %h3
+        = book.title
+      %ul
+        Authors
+        - book.authors_array.each do |author|
+          %li
+            = author
+      %li
+        Categories:
+        = book.categories
+      %li
+        Date of publication:
+        = book.published_date
+      Description:
+      = book.description
+- else
+  Nothing found
